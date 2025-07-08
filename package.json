@@ -1,0 +1,27 @@
+{
+  "name": "portfolio_dotnet",
+  "version": "1.0.0",
+  "description": "First look at .net building mvc in paralell to node mvc to compare",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx @tailwindcss/cli -i wwwroot/css/input.css -o wwwroot/css/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuablackmore/portfolio_dotnet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/joshuablackmore/portfolio_dotnet/issues"
+  },
+  "homepage": "https://github.com/joshuablackmore/portfolio_dotnet#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "daisyui": "^5.0.46",
+    "tailwindcss": "^4.1.11"
+  }
+}

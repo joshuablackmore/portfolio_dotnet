@@ -9,7 +9,7 @@
 @foreach (var discographySection in Model.Discography)
 {
     <h2>@discographySection.Heading</h2>
-    <div class="album-section">
+    <div>
         @foreach (var album in discographySection.Albums)
         {
             <div class="album" style="margin-bottom: 2rem;">

@@ -8,62 +8,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - portfolio_dotnet</title>
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/portfolio_dotnet.styles.css" asp-append-version="true" />
+    <link href="~/css/output.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        @{
-            var navItems = new List<NavItem>
-                {
-                new NavItem { Text = "Home", Controller = "Home" },
-                new NavItem { Text = "Music", Controller = "Music" },
-                new NavItem { Text = "Engineering", Controller = "Engineering" }
-                };
+<body class="bg-base-100 text-base-content font-sans">
+    <div class="flex flex-col min-h-screen max-w-4xl mx-auto">
+        <header class="py-6 border-b">
+            @{
+                var navItems = new List<NavItem>
+                        {
+                        new NavItem { Text = "Home", Controller = "Home" },
+                        new NavItem { Text = "Music", Controller = "Music" },
+                        new NavItem { Text = "Engineering", Controller = "Engineering" }
+                        };
 
-            var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
-        }
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">portfolio_dotnet</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1"></ul>
-                    @foreach (var item in navItems)
-                    {
-                        var isActive = item.Controller == currentController ? "active" : "";
-                        <li class="nav-item">
-                            <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
-                                asp-action="@item.Action">
-                                @item.Text
-                            </a>
-                        </li>
-                    }
+                var contactLinks = new List<NavItem>
+                        {
+                        new NavItem { Text = "GitHub", Href="https://github.com/joshuablackmore",
+                        Icon="/images/icons/github_icon.svg"},
+                        new NavItem { Text = "LinkedIn", Href="https://linkedin.com/joshuablackmore",
+                        Icon="/images/icons/linkedin_icon.svg"}
+                        };
+
+                var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+            }
+
+            <div class="navbar bg-base-100 shadow-sm">
+                <a class="btn btn-ghost text-xl" asp-area="" asp-controller="Home" asp-action="Index">Joshua
+                    Blackmore</a>
+                <div class="navbar-end">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            @foreach (var item in navItems)
+                            {
+                                var isActive = item.Controller == currentController ? "active" : "";
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
+                                        asp-action="@item.Action">
+                                        @item.Text
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="menu px-1 menu-horizontal">
+                        @foreach (var item in navItems)
+                        {
+                            var isActive = item.Controller == currentController ? "active" : "";
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
+                                    asp-action="@item.Action">
+                                    @item.Text
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+        </header>
+        <main role="main" class="flex-grow">
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - portfolio_dotnet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <footer
+            class="text-sm border-t p-4 text-gray-500 flex flex-col items-center gap-2 sm:flex-row sm:justify-between lg:justify-around">
+            <p>© @DateTime.Now.Year Joshua Blackmore</p>
+
+            <ul class="flex gap-4 mt-2 sm:mt-0">
+                @foreach (var contactItem in contactLinks)
+                {
+                    <li>
+                        <a href="@contactItem.Href" target="_blank" class="text-gray-600 hover:text-blue-600 transition">
+                            <img src="@contactItem.Icon" alt="@contactItem.Text icon" class="w-6 h-6" />
+                        </a>
+                    </li>
+                }
+            </ul>
+        </footer>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
 </body>
 
 </html>
