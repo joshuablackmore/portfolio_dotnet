@@ -1,0 +1,33 @@
+@model portfolio_dotnet.Models.MusicViewModel
+
+<h1>Music</h1>
+
+<p>@Model.Bio</p>
+
+<hr />
+
+@foreach (var discographySection in Model.Discography)
+{
+    <h2>@discographySection.Heading</h2>
+    <div class="album-section">
+        @foreach (var album in discographySection.Albums)
+        {
+            <div class="album" style="margin-bottom: 2rem;">
+                <img src="@album.Artwork" alt="@album.Title" style="width:200px;">
+                <h3>@album.Title (@album.Year)</h3>
+                <p><strong>Genre:</strong> @album.Genre</p>
+                <p><strong>Role:</strong> @album.Role</p>
+                <p>@album.Description</p>
+                @if (album.Links != null)
+                {
+                    <p>
+                        @foreach (var link in album.Links)
+                        {
+                            <a href="@link.Value" target="_blank" style="" margin-right: 10px;"">@link.Key</a>
+                        }
+                    </p>
+                }
+            </div>
+        }
+    </div>
+}
