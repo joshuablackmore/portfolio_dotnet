@@ -15,11 +15,11 @@ public class MusicService
 
     public MusicViewModel GetMusicPageContent()
     {
-        var bio = "I've recorded quite a bit of music, please check it out!";
+        var PageTitle = "Music";
         var discography = LoadDiscograhpyFromJson();
         return new MusicViewModel
         {
-            Bio = bio,
+            PageTitle = PageTitle,
             Discography = discography
         };
     }

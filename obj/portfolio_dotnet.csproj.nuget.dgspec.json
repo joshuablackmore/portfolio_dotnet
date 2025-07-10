@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/joshuablackmore/MVC_Projects/portfolio_dotnet/portfolio_dotnet.csproj": {}
+    "/Users/joshuablackmore/Documents/personal-projects/portfolio_dotnet/portfolio_dotnet.csproj": {}
   },
   "projects": {
-    "/Users/joshuablackmore/MVC_Projects/portfolio_dotnet/portfolio_dotnet.csproj": {
+    "/Users/joshuablackmore/Documents/personal-projects/portfolio_dotnet/portfolio_dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/joshuablackmore/MVC_Projects/portfolio_dotnet/portfolio_dotnet.csproj",
+        "projectUniqueName": "/Users/joshuablackmore/Documents/personal-projects/portfolio_dotnet/portfolio_dotnet.csproj",
         "projectName": "portfolio_dotnet",
-        "projectPath": "/Users/joshuablackmore/MVC_Projects/portfolio_dotnet/portfolio_dotnet.csproj",
+        "projectPath": "/Users/joshuablackmore/Documents/personal-projects/portfolio_dotnet/portfolio_dotnet.csproj",
         "packagesPath": "/Users/joshuablackmore/.nuget/packages/",
-        "outputPath": "/Users/joshuablackmore/MVC_Projects/portfolio_dotnet/obj/",
+        "outputPath": "/Users/joshuablackmore/Documents/personal-projects/portfolio_dotnet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/joshuablackmore/.nuget/NuGet/NuGet.Config"
