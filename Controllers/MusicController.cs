@@ -11,9 +11,14 @@ public class MusicController : Controller
     {
         _service = new MusicService(env);
     }
-    public IActionResult Index()
+    public IActionResult MyMusic()
     {
         var content = _service.GetMusicPageContent();
         return View(content);
+    }
+
+    public IActionResult WhatImListeningTo()
+    {
+        return View();
     }
 }

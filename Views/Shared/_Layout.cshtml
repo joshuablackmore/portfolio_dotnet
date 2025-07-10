@@ -47,16 +47,38 @@
                     </div>
 
                     <ul tabindex="0"
-                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-auto p-2 shadow">
                         @foreach (var item in navItems)
                         {
                             var isActive = item.Controller == currentController ? "active" : "";
-                            <li class="nav-item">
-                                <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
-                                    asp-action="@item.Action">
-                                    @item.Text
-                                </a>
-                            </li>
+                            if (item.Text == "Music")
+                            {
+                                <li class="dropdown dropdown-end">
+                                    <div tabindex="0" role="button" class="nav-link text-dark flex items-center gap-1">
+                                        @item.Text
+                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24">
+                                            <path d="M7 10l5 5 5-5z" />
+                                        </svg>
+                                    </div>
+                                    <ul tabindex="0"
+                                        class="dropdown-content menu p-2 bg-base-100 shadow rounded-box w-52 mt-3 z-[1] left-0 w-full overflow-y-auto">
+                                        <li><a asp-controller="Music" asp-action="MyMusic">My Music</a></li>
+                                        <li><a asp-controller="Music" asp-action="WhatImListeningTo">What I'm Listening To</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
+                                        asp-action="@item.Action">
+                                        @item.Text
+                                    </a>
+                                </li>
+                            }
                         }
                     </ul>
 
@@ -67,12 +89,33 @@
                     @foreach (var item in navItems)
                     {
                         var isActive = item.Controller == currentController ? "active" : "";
-                        <li class="nav-item">
-                            <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
-                                asp-action="@item.Action">
-                                @item.Text
-                            </a>
-                        </li>
+                        if (item.Text == "Music")
+                        {
+                            <li class="dropdown">
+                                <div tabindex="0" role="button" class="nav-link text-dark flex items-center gap-1">
+                                    @item.Text
+                                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24">
+                                        <path d="M7 10l5 5 5-5z" />
+                                    </svg>
+                                </div>
+                                <ul tabindex="0"
+                                    class="dropdown-content menu p-2 bg-base-100 shadow rounded-box w-52 mt-3 z-[1]">
+                                    <li><a asp-controller="Music" asp-action="MyMusic">My Music</a></li>
+                                    <li><a asp-controller="Music" asp-action="WhatImListeningTo">What I'm Listening To</a></li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @isActive" asp-area="" asp-controller="@item.Controller"
+                                    asp-action="@item.Action">
+                                    @item.Text
+                                </a>
+                            </li>
+                        }
                     }
                 </ul>
             </div>

@@ -1609,6 +1609,35 @@
   .static {
     position: static;
   }
+  .dropdown-end {
+    --anchor-h: span-left;
+    :where(.dropdown-content) {
+      inset-inline-end: calc(0.25rem * 0);
+      translate: 0 0;
+      [dir="rtl"] & {
+        translate: 0 0;
+      }
+    }
+    &.dropdown-left {
+      --anchor-h: left;
+      --anchor-v: span-top;
+      .dropdown-content {
+        top: auto;
+        bottom: calc(0.25rem * 0);
+      }
+    }
+    &.dropdown-right {
+      --anchor-h: right;
+      --anchor-v: span-top;
+      .dropdown-content {
+        top: auto;
+        bottom: calc(0.25rem * 0);
+      }
+    }
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
   .hero-content {
     isolation: isolate;
     display: flex;
@@ -1762,6 +1791,9 @@
     }
   }
   .z-1 {
+    z-index: 1;
+  }
+  .z-\[1\] {
     z-index: 1;
   }
   .hero {
@@ -2186,6 +2218,9 @@
   .w-56 {
     width: calc(var(--spacing) * 56);
   }
+  .w-auto {
+    width: auto;
+  }
   .w-full {
     width: 100%;
   }
@@ -2238,6 +2273,9 @@
   .justify-center {
     justify-content: center;
   }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -2264,6 +2302,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
   }
   .menu-sm {
     :where(li:not(.menu-title) > *:not(ul, details, .menu-title)), :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
@@ -2327,6 +2368,9 @@
   }
   .bg-green-600 {
     background-color: var(--color-green-600);
+  }
+  .fill-current {
+    fill: currentcolor;
   }
   .object-cover {
     object-fit: cover;
