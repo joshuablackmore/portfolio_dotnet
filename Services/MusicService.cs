@@ -1,5 +1,6 @@
 using System.Text.Json;
-using portfolio_dotnet.Models;
+using portfolio_dotnet.ViewModels.Music;
+using portfolio_dotnet.Models.Music;
 
 namespace portfolio_dotnet.Services;
 

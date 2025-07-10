@@ -1,4 +1,4 @@
-namespace portfolio_dotnet.Models;
+namespace portfolio_dotnet.Models.Music;
 
 public class MusicAlbum
 {

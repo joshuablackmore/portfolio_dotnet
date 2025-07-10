@@ -1,4 +1,4 @@
-namespace portfolio_dotnet.Models;
+namespace portfolio_dotnet.Models.Shared;
 
 public class NavItem
 {

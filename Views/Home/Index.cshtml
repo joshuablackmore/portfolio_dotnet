@@ -1,8 +1,20 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model portfolio_dotnet.ViewModels.Home.HomePageViewModel;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero bg-base-200">
+    <div class="hero-content flex-col lg:flex-row">
+        <img src="https://f4.bcbits.com/img/0017491526_10.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+        <section class="flex flex-col gap-y-6 px-4 py-12">
+            <h1 class="text-2xl font-bold">@Model.Name</h1>
+            <p>@Model.Tagline 👨‍💻🥁</p>
+            <p>@Model.Intro</p>
+            <div>
+                @foreach (var link in Model.CtaLinks)
+                {
+                    <a href="@link.Href" class="btn">
+                        @link.Label
+                    </a>
+                }
+            </div>
+        </section>
+    </div>
 </div>
