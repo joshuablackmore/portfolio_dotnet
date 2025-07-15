@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using portfolio_dotnet.Models.Music;
 using portfolio_dotnet.Services;
+using portfolio_dotnet.ViewModels.Music;
 
 namespace portfolio_dotnet.Controllers;
 
@@ -7,9 +9,12 @@ public class MusicController : Controller
 {
     private readonly MusicService _service;
 
+    private readonly ArtistService _artistService;
+
     public MusicController(IWebHostEnvironment env)
     {
         _service = new MusicService(env);
+        _artistService = new ArtistService(env);
     }
     public IActionResult MyMusic()
     {
@@ -17,8 +22,10 @@ public class MusicController : Controller
         return View(content);
     }
 
+
     public IActionResult WhatImListeningTo()
     {
-        return View();
+        var content = _artistService.GetAristPageContent();
+        return View(content);
     }
 }

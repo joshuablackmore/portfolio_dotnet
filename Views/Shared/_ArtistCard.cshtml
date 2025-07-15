@@ -1,0 +1,36 @@
+@model portfolio_dotnet.Models.Music.ArtistCard;
+
+<div class="card bg-base-100 shadow-md border border-base-200 overflow-hidden max-w-md w-full">
+        <figure>
+            <img src="@Model.Image" alt="@Model.ArtistName cover" class="w-full h-auto object-cover" />
+        </figure>
+    <div class="card-body space-y-2">
+        <div class="flex justify-between items-center">
+            <h3 class="card-title text-lg font-semibold">@Model.ArtistName</h3>
+        </div>
+
+        <p class="text-sm">Genre: @Model.Genre</p>
+
+        <p class="text-base text-gray-600">@Model.Reason</p>
+
+        @if (Model.Links != null && Model.Links.Count > 0)
+        {
+            <div class="flex flex-wrap gap-2 mt-3">
+                @foreach (var link in Model.Links)
+                {
+                    var platform = link.Key.ToLowerInvariant();
+                    var colourClass = platform switch
+                    {
+                        "spotify" => "bg-green-600 text-white hover:bg-green-700",
+                        "bandcamp" => "bg-blue-600 text-white hover:bg-blue-700",
+                        _ => "badge-outline hover:badge-primrary"
+                    };
+                    <a href="@link.Value" target="_blank" class="badge @colourClass">
+                        @link.Key.Substring(0, 1).ToUpper()@link.Key.Substring(1)
+                    </a>
+                }
+            </div>
+        }
+
+    </div>
+</div>

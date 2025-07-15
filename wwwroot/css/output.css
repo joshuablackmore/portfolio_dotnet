@@ -1961,6 +1961,9 @@
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
   }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
   .status {
     display: inline-block;
     aspect-ratio: 1 / 1;
@@ -2359,9 +2362,6 @@
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
-  }
-  .bg-base-200 {
-    background-color: var(--color-base-200);
   }
   .bg-blue-600 {
     background-color: var(--color-blue-600);

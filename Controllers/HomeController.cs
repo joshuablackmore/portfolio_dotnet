@@ -25,7 +25,7 @@ public class HomeController : Controller
             Intro = "I’m a full-stack software engineer and professional drummer. During the day I help build scalable, accessible web apps. After hours, I write and perform experimental music.",
             CtaLinks = new List<CtaLink>
             {
-                new CtaLink { Href = "/music", Label= "🎶 Explore My Music" },
+                new CtaLink { Href = "/music/mymusic", Label= "🎶 Explore My Music" },
                 new CtaLink { Href = "/Engineering", Label = "💻 See My Engineering Work" }
             }
         };

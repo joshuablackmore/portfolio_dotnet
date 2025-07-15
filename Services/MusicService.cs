@@ -15,7 +15,7 @@ public class MusicService
 
     public MusicViewModel GetMusicPageContent()
     {
-        var PageTitle = "Music";
+        var PageTitle = "My Music";
         var discography = LoadDiscograhpyFromJson();
         return new MusicViewModel
         {

@@ -1,0 +1,21 @@
+[
+    {
+        "ArtistName" : "Yaeji",
+        "Image" : "https://f4.bcbits.com/img/0026525033_10.jpg",
+        "Genre" : "Electronic",
+        "Reason" : "Interesting electronic music",
+        "Links" : {
+            "spotify": "https://open.spotify.com/artist/2RqrWplViWHSGLzlhmDcbt",
+            "bandcamp": "https://kraejiyaeji.bandcamp.com/"
+        }
+    },
+    {
+        "ArtistName" : "Chris Sharkey",
+        "Image" : "https://f4.bcbits.com/img/0007138664_10.jpg",
+        "Genre" : "Alt Jazz",
+        "Reason" : "A one of a kind guitarist and producer. I've been lucky enough to play with Chris in my own band too.",
+        "Links" : {
+            "bandcamp" : "https://chrissharkey.bandcamp.com/album/the-green-bullets-mixtape-volume-1"
+        }
+    }
+]
