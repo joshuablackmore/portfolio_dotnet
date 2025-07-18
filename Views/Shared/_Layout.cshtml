@@ -33,10 +33,11 @@
             var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
         }
 
-        <div class="navbar bg-base-100 border-b border-gray-300">
-            <a class="btn btn-ghost text-xl" asp-area="" asp-controller="Home" asp-action="Index"><img src="/images/icons/joshua_blackmore_logo.svg" alt="Joshua Blackmore" class="h-6 w-6" /></a>
+        <div class="navbar bg-base-100 border-b border-gray-300 justify-between pr-[20px] pl-[20px]">
+            <a class="btn btn-ghost" asp-area="" asp-controller="Home" asp-action="Index"><img
+                    src="/images/icons/joshua_blackmore_logo.svg" alt="Joshua Blackmore" class="h-12 w-12" /></a>
             <div class="navbar-end">
-                <div class="dropdown">
+                <div class="dropdown dropdown-end">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -90,7 +91,7 @@
                         var isActive = item.Controller == currentController ? "active" : "";
                         if (item.Text == "Music")
                         {
-                            <li class="dropdown">
+                            <li class="dropdown dropdown-end">
                                 <div tabindex="0" role="button" class="nav-link text-dark flex items-center gap-1">
                                     @item.Text
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="16" height="16"

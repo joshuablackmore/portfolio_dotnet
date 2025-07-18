@@ -2206,6 +2206,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .h-auto {
     height: auto;
   }
@@ -2217,6 +2220,9 @@
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
   }
   .w-52 {
     width: calc(var(--spacing) * 52);
@@ -2414,6 +2420,12 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+  .pr-\[20px\] {
+    padding-right: 20px;
+  }
+  .pl-\[20px\] {
+    padding-left: 20px;
   }
   .font-sans {
     font-family: var(--font-sans);
